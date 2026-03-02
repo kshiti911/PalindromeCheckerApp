@@ -1,32 +1,22 @@
- class Main {
-    static void main() {
-        System.out.println("Welcome to the Palindrome Checker Management System");
-        System.out.println("Version: 1.0");
-        System.out.println("System initialized successfully");
-    }
-}
+
  public class Palindrome {
 
      public static void main(String[] args) {
 
-         System.out.println("Welcome to the Palindrome Checker Management System");
-         System.out.println("Version: 1.0");
-         System.out.println("System initialized successfully");
-
          String input = "madam";
-         boolean isPalindrome = true;
+         String reversed = "";
 
-         for (int i = 0; i < input.length() / 2; i++) {
-             if (input.charAt(i) != input.charAt(input.length() - 1 - i)) {
-                 isPalindrome = false;
-                 break;
-             }
+         for (int i = input.length() - 1; i >= 0; i--) {
+             reversed = reversed + input.charAt(i);
          }
 
-         if (isPalindrome) {
-             System.out.println(input + " is a Palindrome.");
+         System.out.println("Original Text  : " + input);
+         System.out.println("Reversed Text  : " + reversed);
+
+         if (input.equals(reversed)) {
+             System.out.println("Result         : It is a Palindrome.");
          } else {
-             System.out.println(input + " is not a Palindrome.");
+             System.out.println("Result         : It is not a Palindrome.");
          }
      }
  }
