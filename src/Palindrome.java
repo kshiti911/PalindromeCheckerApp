@@ -15,7 +15,7 @@ public class Palindrome {
 
         String input = "madam";
 
-        // Step 1: Convert string to
+        // Step 1: Convert
         Node head = null;
         Node tail = null;
 
