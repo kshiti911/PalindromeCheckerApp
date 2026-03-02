@@ -15,7 +15,6 @@ public class Palindrome {
 
         String input = "madam";
 
-        // Step 1: Convert
         Node head = null;
         Node tail = null;
 
@@ -38,8 +37,6 @@ public class Palindrome {
             slow = slow.next;
             fast = fast.next.next;
         }
-
-        // Step 3: Reverse second half
         Node prev = null;
         Node current = slow;
 
