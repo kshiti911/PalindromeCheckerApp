@@ -11,7 +11,7 @@ public class Palindrome {
         Stack<Character> stack = new Stack<>();
         Queue<Character> queue = new LinkedList<>();
 
-        // Push and Enqueue characters
+
         for (int i = 0; i < input.length(); i++) {
             char ch = input.charAt(i);
             stack.push(ch);      // LIFO
