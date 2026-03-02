@@ -16,7 +16,7 @@ public class Palindrome {
 
         boolean isPalindrome = true;
 
-
+//while loop
         while (deque.size() > 1) {
 
             char front = deque.removeFirst();
