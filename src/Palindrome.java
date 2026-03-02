@@ -4,19 +4,27 @@
      public static void main(String[] args) {
 
          String input = "madam";
-         String reversed = "";
 
-         for (int i = input.length() - 1; i >= 0; i--) {
-             reversed = reversed + input.charAt(i);
+
+         char[] characters = input.toCharArray();
+
+         int start = 0;
+         int end = characters.length - 1;
+         boolean isPalindrome = true;
+
+
+         while (start < end) {
+
+             if (characters[start] != characters[end]) {
+                 isPalindrome = false;
+                 break;
+             }
+
+             start++;
+             end--;
          }
 
-         System.out.println("Original Text  : " + input);
-         System.out.println("Reversed Text  : " + reversed);
-
-         if (input.equals(reversed)) {
-             System.out.println("Result         : It is a Palindrome.");
-         } else {
-             System.out.println("Result         : It is not a Palindrome.");
-         }
+         System.out.println("Input text: " + input);
+         System.out.println("Is it a Palindrome? : " + isPalindrome);
      }
  }
