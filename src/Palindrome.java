@@ -1,33 +1,38 @@
-
-
 import java.util.Stack;
+import java.util.Queue;
+import java.util.LinkedList;
+
 public class Palindrome {
 
+    public static void main(String[] args) {
+
+        String input = "madam";
+
+        Stack<Character> stack = new Stack<>();
+        Queue<Character> queue = new LinkedList<>();
+
+        // Push and Enqueue characters
+        for (int i = 0; i < input.length(); i++) {
+            char ch = input.charAt(i);
+            stack.push(ch);      // LIFO
+            queue.add(ch);       // FIFO
+        }
+
+        boolean isPalindrome = true;
 
 
-     public static void main(String[] args) {
+        while (!stack.isEmpty() && !queue.isEmpty()) {
 
+            char fromStack = stack.pop();     // Last In First Out
+            char fromQueue = queue.remove();  // First In First Out
 
-         String input = "madam";
-         Stack<Character> stack = new Stack<>();
+            if (fromStack != fromQueue) {
+                isPalindrome = false;
+                break;
+            }
+        }
 
-
-         for (int i = 0; i < input.length(); i++) {
-             stack.push(input.charAt(i));
-         }
-
-         boolean isPalindrome = true;
-
-
-         for (int i = 0; i < input.length(); i++) {
-             char poppedChar = stack.pop();
-             if (input.charAt(i) != poppedChar) {
-                 isPalindrome = false;
-                 break;
-             }
-         }
-
-         System.out.println("Input text: " + input);
-         System.out.println("Is it a Palindrome? : " + isPalindrome);
-     }
- }
+        System.out.println("Input text: " + input);
+        System.out.println("Is it a Palindrome? : " + isPalindrome);
+    }
+}
