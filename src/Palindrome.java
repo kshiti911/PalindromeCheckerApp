@@ -1,27 +1,30 @@
 
- public class Palindrome {
+
+import java.util.Stack;
+public class Palindrome {
+
+
 
      public static void main(String[] args) {
 
+
          String input = "madam";
+         Stack<Character> stack = new Stack<>();
 
 
-         char[] characters = input.toCharArray();
+         for (int i = 0; i < input.length(); i++) {
+             stack.push(input.charAt(i));
+         }
 
-         int start = 0;
-         int end = characters.length - 1;
          boolean isPalindrome = true;
 
 
-         while (start < end) {
-
-             if (characters[start] != characters[end]) {
+         for (int i = 0; i < input.length(); i++) {
+             char poppedChar = stack.pop();
+             if (input.charAt(i) != poppedChar) {
                  isPalindrome = false;
                  break;
              }
-
-             start++;
-             end--;
          }
 
          System.out.println("Input text: " + input);
